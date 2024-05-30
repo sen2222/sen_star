@@ -188,6 +188,15 @@
                 e.onclick = function (e) {
                     t && t(), o(e)
                 }
+
+                var touchHandler = function (e) {
+                    if (e.touches.length > 0) {
+                        var touch = e.touches[0];
+                        o(touch);
+                    }
+                };
+
+                e.addEventListener("touchstart", touchHandler);
             }
 
             function o(e) {
